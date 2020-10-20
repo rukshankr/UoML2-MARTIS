@@ -1,0 +1,15 @@
+.squarebutton {
+	width: 100px;
+	height: 80px;
+	font-weight: bold;
+}
+
+.divclass {
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+}
+
+.iconsize {
+	font-size: 20px;
+}
