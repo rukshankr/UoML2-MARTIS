@@ -36,7 +36,7 @@ const Login: React.FC = () => {
                     </IonRow>
                     <IonRow>
                         <IonCol>
-                            <IonButton color="danger" shape="round" expand="block" href="/inspection">
+                            <IonButton color="danger" shape="round" expand="block" href="/selection">
                                 Login
                             </IonButton>
                         </IonCol>
