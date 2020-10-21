@@ -1,6 +1,6 @@
 import React from 'react';
 import { IonApp, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import { globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle } from 'ionicons/icons';
+import { search, globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
 
 import './Selection.css';
 const Selection: React.FC = () => {
@@ -152,6 +152,20 @@ const Selection: React.FC = () => {
                                 <IonIcon className="iconsize" icon={train} />
                 Track<br /> Circuits<br /> Tests
                 </div></IonButton>
+                        </IonCol>
+                    </IonRow>
+                    <IonRow>
+                        <IonCol>
+                            <IonButton href="/assign" fill="solid" color="danger" expand="block">
+                                <IonIcon slot="start" icon={add}/>
+                                Assign Tests</IonButton>
+                        </IonCol>
+                    </IonRow>
+                    <IonRow>
+                        <IonCol>
+                            <IonButton href="/inspection" fill="solid" color="success" expand="block">
+                                <IonIcon slot="start" icon={search} />
+                            Search Tests</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

@@ -12,7 +12,7 @@ const Login: React.FC = () => {
             <IonContent fullscreen>
                 <IonHeader collapse="condense">
                     <IonToolbar>
-                        <IonTitle size="large">Blank</IonTitle>
+                        <IonTitle size="large">Login to MARTIS</IonTitle>
                     </IonToolbar>
                 </IonHeader>
                 <IonGrid className="ion-text-center ion-margin">

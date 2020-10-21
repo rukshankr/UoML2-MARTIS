@@ -5,6 +5,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import Login from './pages/Login';
 import Selection from './pages/Selection';
 import Inspection from './pages/Inspection';
+import Assign from './pages/Assign';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -34,6 +35,7 @@ const App: React.FC = () => (
         <Route path="/login" component={Login} />
         <Route path="/selection" component={Selection} />
         <Route path="/inspection" component={Inspection} />
+        <Route path="/assign" component={Assign} />
 
         <Redirect exact from="/" to="/login" />
       </IonRouterOutlet>

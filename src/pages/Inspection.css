@@ -1,9 +1,38 @@
-.Range{
+@media only screen and (max-width: 600px) {
+
+}
+
+@media only screen and (min-width: 600px) {
+    
+    .dateSearchRadio {
+        column-count: 2;
+        column-gap: 0px;
+    }
+    .AssignRadio {
+        column-count: 2;
+        column-gap: 10px;
+    }
+    .searchInsRadio{
+        column-count: 3;
+        column-gap: 0px;
+    }
+    .radioItem {
+        column-span: 1;
+    }
+}
+
+.Range {
     width: 25%;
     height: 25%;
 }
-
-.forceInfo{
+.forceInfo {
     align-content: center;
     align-items: center;
+}
+
+textarea{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom-color: darkgrey;
 }
