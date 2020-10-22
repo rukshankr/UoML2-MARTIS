@@ -28,12 +28,12 @@ const Selection: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonToolbar>
+                {/* <IonToolbar>
                     <IonTitle size="small" >
                         Browse Compliance by Organizational Chart
         </IonTitle>
 
-                </IonToolbar>
+                </IonToolbar> */}
 
 
                 <IonGrid>
@@ -157,7 +157,7 @@ const Selection: React.FC = () => {
                     <IonRow>
                         <IonCol>
                             <IonButton href="/assign" fill="solid" color="danger" expand="block">
-                                <IonIcon slot="start" icon={add}/>
+                                <IonIcon slot="start" icon={add} />
                                 Assign Tests</IonButton>
                         </IonCol>
                     </IonRow>
