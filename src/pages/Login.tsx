@@ -1,5 +1,6 @@
-import { IonButton, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonInput, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
+import './Login.css';
 
 const Login: React.FC = () => {
     return (
@@ -17,6 +18,15 @@ const Login: React.FC = () => {
                 </IonHeader>
                 <IonGrid className="ion-text-center ion-margin">
                     <IonRow>
+                    </IonRow>
+                    <IonRow >
+                        <IonCol>
+                            <IonCard>
+                                <IonCardContent>
+                                    <IonImg className="martisImg" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Wabtec_Logo.svg/1200px-Wabtec_Logo.svg.png"/>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
                     </IonRow>
                     <IonRow>
                         <IonCol>

@@ -202,7 +202,7 @@ const Inspection: React.FC = () => {
 
                                                     </IonItem>
                                                     <IonItem lines="none" className="radioItem">
-                                                        <IonLabel>Date uploaded to<br /> RailDOCs</IonLabel>
+                                                        <IonLabel>Date uploaded to RailDOCs</IonLabel>
                                                         <IonRadio id="date_search" name="date_search" value="opt2" slot="start" />
 
                                                     </IonItem>
