@@ -23,27 +23,30 @@ const Login: React.FC = () => {
                         <IonCol>
                             <IonCard>
                                 <IonCardContent>
-                                    <IonImg className="martisImg" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Wabtec_Logo.svg/1200px-Wabtec_Logo.svg.png"/>
+                                    <IonImg className="martisImg" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Wabtec_Logo.svg/1200px-Wabtec_Logo.svg.png" />
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>
                     </IonRow>
-                    <IonRow>
-                        <IonCol>
-                            <IonItem>
-                                <IonLabel position="floating">Your Username / Email Address</IonLabel>
-                                <IonInput type="text"></IonInput>
-                            </IonItem>
-                        </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <IonCol>
-                            <IonItem>
-                                <IonLabel position="floating">Your Password</IonLabel>
-                                <IonInput type="password"></IonInput>
-                            </IonItem>
-                        </IonCol>
-                    </IonRow>
+                    <IonCard>
+                        <IonRow>
+
+                            <IonCol>
+                                <IonItem>
+                                    <IonLabel position="floating">Your Username / Email Address</IonLabel>
+                                    <IonInput type="text"></IonInput>
+                                </IonItem>
+                            </IonCol>
+                        </IonRow>
+                        <IonRow>
+                            <IonCol>
+                                <IonItem>
+                                    <IonLabel position="floating">Your Password</IonLabel>
+                                    <IonInput type="password"></IonInput>
+                                </IonItem>
+                            </IonCol>
+                        </IonRow>
+                    </IonCard>
                     <IonRow>
                         <IonCol>
                             <IonButton color="danger" shape="round" expand="block" href="/selection">
