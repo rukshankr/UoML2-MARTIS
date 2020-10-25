@@ -3,6 +3,7 @@ import { IonApp, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, Ion
 import { search, globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
 
 import './Selection.css';
+import GeolocationButton from '../components/GeoLocationButton';
 const Selection: React.FC = () => {
     return (
         <IonApp>
@@ -37,6 +38,11 @@ const Selection: React.FC = () => {
 
 
                 <IonGrid>
+                    <IonRow>
+                        <IonCol>
+                            <GeolocationButton/>
+                        </IonCol>
+                    </IonRow>
                     <IonRow>
                         <IonCol >
                             <IonButton href="/inspection" expand="block"  >
