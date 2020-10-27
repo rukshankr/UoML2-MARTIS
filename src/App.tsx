@@ -46,7 +46,7 @@ const App: React.FC = () => (
           <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp}/>Search Inspections</IonItem>
           <IonItem><IonIcon slot="start" icon={searchCircleSharp}/>Search Repairs</IonItem>
           <IonItem><IonIcon slot="start" icon={settingsSharp}/>Settings</IonItem>
-          <IonItem><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
+          <IonItem href="/"><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
         </IonList>
       </IonContent>
     </IonMenu>
