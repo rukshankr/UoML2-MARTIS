@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonRadio, IonRadioGroup, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar, IonCardContent, } from '@ionic/react';
+import { IonButton, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonRadio, IonRadioGroup, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar, IonCardContent, IonButtons, IonMenuButton, } from '@ionic/react';
 import React from 'react';
 import './Inspection.css';
 
@@ -6,7 +6,10 @@ const Inspection: React.FC = () => {
     return (
         <IonPage>
             <IonHeader >
-                <IonToolbar color="primary"  >
+                <IonToolbar color="primary">
+                    <IonButtons slot="start">
+                        <IonMenuButton autoHide={false} menu="first"></IonMenuButton>
+                    </IonButtons>
                     <IonTitle>Search Inspections</IonTitle>
                 </IonToolbar>
             </IonHeader>

@@ -1,6 +1,6 @@
 import React from 'react';
-import { IonApp, IonButton, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import { search, globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
+import { IonApp, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
 
 import './Selection.css';
 import GeolocationButton from '../components/GeoLocationButton';
@@ -9,6 +9,9 @@ const Selection: React.FC = () => {
         <IonApp>
             <IonHeader>
                 <IonToolbar color="primary">
+                    <IonButtons slot="start">
+                        <IonMenuButton autoHide={false} menu="first"></IonMenuButton>
+                    </IonButtons>
                     <IonGrid>
                         <IonRow>
                             <IonTitle >
@@ -40,7 +43,14 @@ const Selection: React.FC = () => {
                 <IonGrid>
                     <IonRow>
                         <IonCol>
-                            <GeolocationButton/>
+                            <GeolocationButton />
+                        </IonCol>
+                    </IonRow>
+                    <IonRow>
+                        <IonCol>
+                            <IonButton href="/assign" fill="solid" color="danger" expand="block">
+                                <IonIcon slot="start" icon={add} />
+                                Create Tests</IonButton>
                         </IonCol>
                     </IonRow>
                     <IonRow>
@@ -158,20 +168,6 @@ const Selection: React.FC = () => {
                                 <IonIcon className="iconsize" icon={train} />
                 Track<br /> Circuits<br /> Tests
                 </div></IonButton>
-                        </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <IonCol>
-                            <IonButton href="/assign" fill="solid" color="danger" expand="block">
-                                <IonIcon slot="start" icon={add} />
-                                Assign Tests</IonButton>
-                        </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <IonCol>
-                            <IonButton href="/inspection" fill="solid" color="success" expand="block">
-                                <IonIcon slot="start" icon={search} />
-                            Search Tests</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
