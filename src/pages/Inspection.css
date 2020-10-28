@@ -41,3 +41,8 @@ textarea {
 	border-right: 0;
 	border-bottom-color: darkgrey;
 }
+
+.theme {
+	--background: #eb445a;
+	color: white;
+}

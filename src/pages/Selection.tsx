@@ -8,21 +8,18 @@ const Selection: React.FC = () => {
     return (
         <IonApp>
             <IonHeader>
-                <IonToolbar color="primary">
+                <IonToolbar className="theme">
                     <IonButtons slot="start">
-                        <IonMenuButton autoHide={false} menu="first"></IonMenuButton>
+                        <IonMenuButton autoHide={false} menu="first" className="theme"></IonMenuButton>
                     </IonButtons>
                     <IonGrid>
                         <IonRow>
-                            <IonTitle >
+                            <IonTitle size="small" >
                                 Engineering Department
-              </IonTitle>
-
-                        </IonRow>
-                        <IonRow >
-                            <IonTitle color="" size="small">
+                                <br />
                                 Preventive Maintenance Management System
-              </IonTitle>
+                            </IonTitle>
+
                         </IonRow>
                     </IonGrid>
 
@@ -55,7 +52,7 @@ const Selection: React.FC = () => {
                     </IonRow>
                     <IonRow>
                         <IonCol >
-                            <IonButton href="/inspection" expand="block"  >
+                            <IonButton className="alltest" href="/inspection" expand="block"  >
                                 <IonIcon icon={globe} />
                 All tests
               </IonButton>

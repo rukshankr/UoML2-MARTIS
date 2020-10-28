@@ -4,54 +4,54 @@ import './Login.css';
 
 const Login: React.FC = () => {
     return (
-            <IonPage id="first">
-                <IonHeader>
-                    <IonToolbar color="primary">
-                        <IonTitle>Login to MARTIS</IonTitle>
-                    </IonToolbar>
-                </IonHeader>
-                <IonContent fullscreen>
-                    <IonGrid className="ion-text-center ion-margin">
+        <IonPage id="first">
+            <IonHeader >
+                <IonToolbar className="theme">
+                    <IonTitle>Login to MARTIS</IonTitle>
+                </IonToolbar>
+            </IonHeader>
+            <IonContent fullscreen>
+                <IonGrid className="ion-text-center ion-margin">
+                    <IonRow>
+                    </IonRow>
+                    <IonRow >
+                        <IonCol>
+                            <IonCard>
+                                <IonCardContent>
+                                    <IonImg className="martisImg" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Wabtec_Logo.svg/1200px-Wabtec_Logo.svg.png" />
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    </IonRow>
+                    <IonCard>
                         <IonRow>
-                        </IonRow>
-                        <IonRow >
-                            <IonCol>
-                                <IonCard>
-                                    <IonCardContent>
-                                        <IonImg className="martisImg" src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/Wabtec_Logo.svg/1200px-Wabtec_Logo.svg.png" />
-                                    </IonCardContent>
-                                </IonCard>
-                            </IonCol>
-                        </IonRow>
-                        <IonCard>
-                            <IonRow>
 
-                                <IonCol>
-                                    <IonItem>
-                                        <IonLabel position="floating">Your Username / Email Address</IonLabel>
-                                        <IonInput type="text"></IonInput>
-                                    </IonItem>
-                                </IonCol>
-                            </IonRow>
-                            <IonRow>
-                                <IonCol>
-                                    <IonItem>
-                                        <IonLabel position="floating">Your Password</IonLabel>
-                                        <IonInput type="password"></IonInput>
-                                    </IonItem>
-                                </IonCol>
-                            </IonRow>
-                        </IonCard>
-                        <IonRow>
                             <IonCol>
-                                <IonButton color="danger" shape="round" expand="block" href="/selection">
-                                    Login
-                            </IonButton>
+                                <IonItem>
+                                    <IonLabel position="floating">Your Username / Email Address</IonLabel>
+                                    <IonInput type="text"></IonInput>
+                                </IonItem>
                             </IonCol>
                         </IonRow>
-                    </IonGrid>
-                </IonContent>
-            </IonPage>
+                        <IonRow>
+                            <IonCol>
+                                <IonItem>
+                                    <IonLabel position="floating">Your Password</IonLabel>
+                                    <IonInput type="password"></IonInput>
+                                </IonItem>
+                            </IonCol>
+                        </IonRow>
+                    </IonCard>
+                    <IonRow>
+                        <IonCol>
+                            <IonButton color="danger" shape="round" expand="block" href="/selection">
+                                Login
+                            </IonButton>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
+            </IonContent>
+        </IonPage>
     )
 };
 

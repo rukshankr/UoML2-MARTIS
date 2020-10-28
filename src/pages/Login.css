@@ -1,5 +1,9 @@
-.martisImg{
-    height: fit-content;
-    width: fit-content;
-    align-items: center;
+.martisImg {
+	height: fit-content;
+	width: fit-content;
+	align-items: center;
+}
+.theme {
+	--background: #eb445a;
+	color: white;
 }
