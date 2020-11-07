@@ -1,5 +1,11 @@
-.martisImg{
-    height: fit-content;
-    width: fit-content;
-    align-items: center;
+.martisImg {
+	height: 200px;
+	width: 700 px;
+}
+.theme {
+	--background: #eb445a;
+	color: white;
+}
+.cardlogin {
+	align-content: center;
 }

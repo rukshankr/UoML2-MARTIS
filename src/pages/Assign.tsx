@@ -6,9 +6,9 @@ const Assign: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
-                <IonToolbar color="primary">
+                <IonToolbar className="theme">
                     <IonButtons slot="start">
-                        <IonMenuButton autoHide={false} menu="first"></IonMenuButton>
+                        <IonMenuButton className="theme" autoHide={false} menu="first"></IonMenuButton>
                     </IonButtons>
                     <IonTitle>Assign Inspections</IonTitle>
                 </IonToolbar>
@@ -209,16 +209,17 @@ const Assign: React.FC = () => {
                                             <IonInput type="date" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31" placeholder="Any"></IonInput>
                                         </IonCol>
                                     </IonRow>
-                                    <IonRow>
-                                        <IonCol>
-                                            <IonButton expand="block" color="danger" size="large">Assign</IonButton>
-                                        </IonCol>
-                                    </IonRow>
 
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>
                     </IonRow>
+                    <IonRow>
+                        <IonCol>
+                            <IonButton expand="block" color="danger" size="large">Assign</IonButton>
+                        </IonCol>
+                    </IonRow>
+
 
                 </IonGrid>
             </IonContent>

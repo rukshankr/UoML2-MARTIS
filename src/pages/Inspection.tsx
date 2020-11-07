@@ -6,9 +6,9 @@ const Inspection: React.FC = () => {
     return (
         <IonPage>
             <IonHeader >
-                <IonToolbar color="primary">
+                <IonToolbar className="theme">
                     <IonButtons slot="start">
-                        <IonMenuButton autoHide={false} menu="first"></IonMenuButton>
+                        <IonMenuButton className="theme" autoHide={false} menu="first"></IonMenuButton>
                     </IonButtons>
                     <IonTitle>Search Inspections</IonTitle>
                 </IonToolbar>
