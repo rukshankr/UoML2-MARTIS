@@ -55,7 +55,7 @@ const Selection: React.FC = () => {
                     </IonRow>
                     <IonRow>
                         <IonCol >
-                            <IonButton href="/inspection" expand="block"  >
+                            <IonButton href="/inspection" expand="block" color="dark">
                                 <IonIcon icon={globe} />
                 All tests
               </IonButton>

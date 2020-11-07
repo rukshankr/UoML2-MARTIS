@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Selection from './pages/Selection';
 import Inspection from './pages/Inspection';
 import Assign from './pages/Assign';
+import Repairs from './pages/Repairs';
 
 
 
@@ -44,7 +45,7 @@ const App: React.FC = () => (
           <IonItem href="selection"><IonIcon slot="start" icon={checkboxSharp}/>Select Test</IonItem>
           <IonItem href="/assign"><IonIcon slot="start" icon={createSharp}/>Assign Test</IonItem>
           <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp}/>Search Inspections</IonItem>
-          <IonItem><IonIcon slot="start" icon={searchCircleSharp}/>Search Repairs</IonItem>
+          <IonItem href="/repairs"><IonIcon slot="start" icon={searchCircleSharp}/>Search Repairs</IonItem>
           <IonItem><IonIcon slot="start" icon={settingsSharp}/>Settings</IonItem>
           <IonItem href="/"><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
         </IonList>
@@ -56,6 +57,7 @@ const App: React.FC = () => (
           <Route path="/selection" component={Selection} />
           <Route path="/inspection" component={Inspection} />
           <Route path="/assign" component={Assign} />
+          <Route path="/repairs" component={Repairs}/> 
 
           <Redirect exact from="/" to="/login" />
         </IonRouterOutlet>
