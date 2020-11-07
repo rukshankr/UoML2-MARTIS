@@ -22,19 +22,9 @@ const Selection: React.FC = () => {
 
                         </IonRow>
                     </IonGrid>
-
-
-
-
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                {/* <IonToolbar>
-                    <IonTitle size="small" >
-                        Browse Compliance by Organizational Chart
-        </IonTitle>
-
-                </IonToolbar> */}
 
 
                 <IonGrid>
@@ -54,8 +44,8 @@ const Selection: React.FC = () => {
                         <IonCol >
                             <IonButton className="alltest" href="/inspection" expand="block"  >
                                 <IonIcon icon={globe} />
-                All tests
-              </IonButton>
+                                All tests
+                            </IonButton>
                         </IonCol>
 
                     </IonRow>
