@@ -1,10 +1,12 @@
 import { IonButton, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonRadio, IonRadioGroup, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar, IonCardContent, IonButtons, IonMenuButton, } from '@ionic/react';
 import React from 'react';
+import PinBox from '../components/PinBox';
 import './Inspection.css';
 
 const Inspection: React.FC = () => {
     return (
         <IonPage>
+            <PinBox/>
             <IonHeader >
                 <IonToolbar className="theme">
                     <IonButtons slot="start">

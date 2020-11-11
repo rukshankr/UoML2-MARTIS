@@ -4,10 +4,12 @@ import { globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline
 
 import './Selection.css';
 import GeolocationButton from '../components/GeoLocationButton';
+import PinBox from '../components/PinBox';
 const Selection: React.FC = () => {
     return (
         <IonApp>
             <IonHeader>
+                <PinBox/>
                 <IonToolbar className="theme">
                     <IonButtons slot="start">
                         <IonMenuButton autoHide={false} menu="first" className="theme"></IonMenuButton>

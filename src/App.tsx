@@ -32,6 +32,7 @@ import './theme/variables.css';
 
 
 const App: React.FC = () => (
+  <React.Fragment>
   <IonApp>
     <IonMenu side="start" menuId="first" contentId="premiere">
       <IonHeader>
@@ -63,6 +64,7 @@ const App: React.FC = () => (
         </IonRouterOutlet>
       </IonReactRouter>
   </IonApp>
+  </React.Fragment>
 );
 
 export default App;
