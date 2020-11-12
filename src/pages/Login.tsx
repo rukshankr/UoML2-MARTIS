@@ -44,7 +44,7 @@ const Login: React.FC = () => {
                                     <IonItem>
 
 
-                                        <IonCheckbox color="danger"></IonCheckbox>
+                                        <IonCheckbox color="danger" slot="start"></IonCheckbox>
                                         <IonLabel> Remember Me</IonLabel>
                                     </IonItem>
 
