@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonContent, IonHeader, IonIcon, IonItem, IonList, IonMenu, IonRouterOutlet, IonTitle, IonToolbar, } from '@ionic/react';
-import {addSharp, checkboxSharp, createSharp, logOutSharp, searchCircleSharp, searchSharp, settingsSharp, trailSign} from 'ionicons/icons';
+import {addSharp, checkboxSharp, createSharp, documentAttach, documentText, logOutSharp, searchSharp, settingsSharp, trailSign} from 'ionicons/icons';
 import { IonReactRouter } from '@ionic/react-router';
 import { useAuth0 } from '@auth0/auth0-react';
 import Login from './pages/Login';
@@ -59,8 +59,8 @@ const App: React.FC = () => {
           <IonItem href="selection" ><IonIcon slot="start" icon={checkboxSharp}/>Select Test</IonItem>
           <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp}/>Assign Test</IonItem>
           <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp}/>Search Inspections</IonItem>
-          <IonItem href="/repairs"><IonIcon slot="start" icon={searchCircleSharp}/>Report Repairs</IonItem>
-          <IonItem href="/reports" /*hidden={hideForMechs()}*/><IonIcon slot="start" icon={addSharp}/>View Reports</IonItem>
+          <IonItem href="/repairs"><IonIcon slot="start" icon={documentAttach}/>Report Repairs</IonItem>
+          <IonItem href="/reports" /*hidden={hideForMechs()}*/><IonIcon slot="start" icon={documentText}/>View Reports</IonItem>
           <IonItem><IonIcon slot="start" icon={settingsSharp}/>Settings</IonItem>
           <IonItem onClick={()=> logout()}><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
         </IonList>

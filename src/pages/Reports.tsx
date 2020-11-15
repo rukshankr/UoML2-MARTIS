@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonLabel, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react'
 import PinBox from '../components/PinBox';
 import axios from 'axios';
@@ -39,7 +39,37 @@ const Reports: React.FC = () => {
                     <IonRow>
                         <IonCol>
                             <IonCard>
-                            <IonCardHeader mode="ios" className="cardhead">
+                                <IonCardHeader mode="ios" className="cardhead">
+                                    <IonCardTitle>Search for Reports</IonCardTitle>
+                                </IonCardHeader>
+                                <IonCardContent>
+                                    <IonRow>
+                                        <IonCol>
+                                            <IonItem>
+                                                <IonInput type="search">Employee ID: </IonInput>
+                                            </IonItem>
+                                        </IonCol>
+                                    </IonRow>
+                                    <IonRow>
+                                        <IonCol>
+                                            <IonItem>
+                                                <IonInput type="date">Date: </IonInput>
+                                            </IonItem>
+                                        </IonCol>
+                                    </IonRow>
+                                    <IonRow>
+                                        <IonCol>
+                                            <IonButton color="danger">Search</IonButton>
+                                        </IonCol>
+                                    </IonRow>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    </IonRow>
+                    <IonRow>
+                        <IonCol>
+                            <IonCard>
+                                <IonCardHeader mode="ios" className="cardhead">
                                     <IonCardTitle>Inspection Report - Signal Tests and Inspections</IonCardTitle>
                                 </IonCardHeader>
                                 <IonCardContent>
@@ -50,7 +80,7 @@ const Reports: React.FC = () => {
                                             </IonItem>
                                         </IonCol>
                                         <IonCol>
-                                        <IonLabel position="fixed">Subivision:</IonLabel>
+                                            <IonLabel position="fixed">Subivision:</IonLabel>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
@@ -60,7 +90,7 @@ const Reports: React.FC = () => {
                                             </IonItem>
                                         </IonCol>
                                         <IonCol>
-                                        <IonLabel position="fixed">Test Date:</IonLabel>
+                                            <IonLabel position="fixed">Test Date:</IonLabel>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
@@ -70,7 +100,7 @@ const Reports: React.FC = () => {
                                             </IonItem>
                                         </IonCol>
                                         <IonCol>
-                                        <IonLabel position="fixed">Employee's Name:</IonLabel>
+                                            <IonLabel position="fixed">Employee's Name:</IonLabel>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
@@ -98,19 +128,29 @@ const Reports: React.FC = () => {
                                     </IonRow>
                                 </IonCardHeader>
                                 <IonCardContent>
-                                    
+                                        {
+                                            repairs.map(item => {
+                                                return(
+                                                <IonRow>
+                                                    <IonCol>{item['EngineerID']}</IonCol>
+                                                    <IonCol>{item['RepairDate']}</IonCol>
+                                                    <IonCol>{item['Comment']}</IonCol>
+                                                </IonRow>
+                                                )
+                                            })
+                                        }
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>
                     </IonRow>
                     <IonRow>
                         <IonCol>
-                        <IonButton color="danger" size="large" expand="block">Download as PDF</IonButton>
+                            <IonButton color="danger" size="large" expand="block">Download as PDF</IonButton>
                         </IonCol>
                     </IonRow>
                     <IonRow>
                         <IonCol>
-                        <IonButton color="primary" size="large" expand="block">Send to email</IonButton>
+                            <IonButton color="primary" size="large" expand="block">Send to email</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

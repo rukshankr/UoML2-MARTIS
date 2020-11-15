@@ -15,7 +15,7 @@ const Repairs: React.FC = () => {
     const [assetID, setassetID] = useState<string>();
     const [repairDate, setRepairDate] = useState<string>();
     const [comment, setComment] = useState<string>();
-    const [putRepair, setPutRepair] = useState<RepairPut>({put: false, message: "Repair wasn't added"});
+    const [putRepair, setPutRepair] = useState<RepairPut>({put: false});
 
     const repairJSON = {
         engineerId: engineerID,
@@ -27,7 +27,14 @@ const Repairs: React.FC = () => {
         console.log(repairJSON)
         return axios.put(`http://localhost:3000/repairs/addRepair`, repairJSON).then(response => {
             console.log(response.data)
-            setPutRepair({put : true ,message : response.data})
+            if(response.data !== "")
+            {
+                setPutRepair({put: true, message : response.data})
+            }
+            else setPutRepair({put: true, message : "Repair not sent"})
+        })
+        .catch(error => {
+            setPutRepair({put: true, message : error})
         })
     };
 
@@ -35,7 +42,7 @@ const Repairs: React.FC = () => {
         <IonPage>
             <IonToast
                 isOpen={putRepair.put}
-                onDidDismiss={() => setPutRepair({ message: "Repair wasn't added", put: false })}
+                onDidDismiss={() => setPutRepair({ message: "", put: false })}
                 message={putRepair.message}
                 duration={3000}
             />
@@ -119,7 +126,7 @@ const Repairs: React.FC = () => {
                                             <label>Repair Date:</label>
                                             <IonInput
                                                 value={repairDate}
-                                                type="date" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31"
+                                                type="datetime-local" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31"
                                                 placeholder="Any"
                                                 onIonChange={e => setRepairDate(e.detail.value!)}></IonInput>
                                         </IonCol>
