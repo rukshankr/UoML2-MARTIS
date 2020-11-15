@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonApp, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonApp, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import { globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
 
 import './Selection.css';
@@ -12,31 +12,23 @@ import axios from 'axios';
 const sendGetRequest = () => {
 
     return axios({
-      url: 'http://localhost:3000/repairs/getRepairs',
-      method: 'get'
+        url: 'http://localhost:5000/getRepairs',
+        method: 'get'
     }).then(response => {
-  
-      console.log(response.data);
-      return response.data;
-    })
-  };
 
-//   const updateRepairs(item) {
-//     return dispatch => {
-//         console.log(item)
-//         return axios.put(`/locks`, item).then(response => {
-//             console.log(response)
-//         })
-//     }
-// };
+        console.log(response.data);
+        return response.data;
+    })
+};
+
 
 const Selection: React.FC = () => {
-    //const { isAuthenticated } = useAuth0();
     const { user } = useAuth0();
     const [repairs, setRepairs] = useState([]);
-    React.useEffect(()=>{
+    React.useEffect(() => {
         sendGetRequest().then(data => setRepairs(data.data));
     }, []);
+    console.log(repairs);
 
     return (
         <IonApp>
@@ -70,9 +62,6 @@ const Selection: React.FC = () => {
                         <IonCol>
                             <GeolocationButton />
                         </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <div>{JSON.stringify(repairs, null, 2)}</div> 
                     </IonRow>
                     <IonRow>
                         <IonCol>
@@ -197,6 +186,56 @@ const Selection: React.FC = () => {
                 Track<br /> Circuits<br /> Tests
                 </div></IonButton>
                         </IonCol>
+                    </IonRow>
+                    <IonRow className="ion-text-center ion-align-items-center">
+                        <IonCol>
+                            <IonCard>
+                                <IonCardHeader className="cardhead">
+                                    <IonCardTitle>
+                                        Repairs
+                                </IonCardTitle>
+                                    <IonCardSubtitle>
+                                        <IonRow>
+                                            <IonCol size="4">
+                                                AssetID
+                                        </IonCol>
+                                            <IonCol size="4">
+                                                EngineerID
+                                        </IonCol>
+                                            <IonCol size="4">
+                                                Date Repair Assigned
+                                        </IonCol>
+                                        </IonRow>
+                                    </IonCardSubtitle>
+
+                                </IonCardHeader>
+                                <IonCardContent>
+                                    {repairs.map(item => {
+                                        return (
+                                            <IonRow className="ion-justify-content-center">
+                                                <IonCol size="4">
+                                                    {item['AssetID']}
+                                                </IonCol>
+                                                <IonCol size="4">
+                                                    {item['EngineerID']}
+                                                </IonCol>
+                                                <IonCol size="4">
+                                                    {item['RepairDate']}
+                                                </IonCol>
+                                            </IonRow>
+
+                                        )
+                                    })}
+
+                                </IonCardContent>
+
+
+                            </IonCard>
+
+                        </IonCol>
+                        <div>
+
+                        </div>
                     </IonRow>
                 </IonGrid>
             </IonContent>

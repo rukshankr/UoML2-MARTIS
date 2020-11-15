@@ -28,7 +28,7 @@ const GeolocationButton: React.FC = () => {
                 latitude: 6.904564,  //30.849635,               //asset location
                 longitude: 79.957127 //-83.24559
             };
-            
+
             const employee = {
                 latitude: position.coords.latitude,         //employee location
                 longitude: position.coords.longitude
@@ -36,10 +36,10 @@ const GeolocationButton: React.FC = () => {
             const distance = Haversine(asset, employee, { unit: "meter" });
             console.log(distance);
             if (distance < 500) {
-                setShortDist('yes');
+                setShortDist('Yes');
             }
             else {
-                setShortDist('no');
+                setShortDist('No');
             }
         } catch (e) {
             setError({ showError: true, message: e.message });
