@@ -1,14 +1,19 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { IonApp, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
+=======
+import React from 'react';
+import { IonApp, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+>>>>>>> 259957a14dbd20fb4573d2a2ae697780b43b6fa0
 import { globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
 
 import './Selection.css';
 import GeolocationButton from '../components/GeoLocationButton';
 import { useAuth0 } from '@auth0/auth0-react';
-import axios from 'axios';
 
 
 
+<<<<<<< HEAD
 const sendGetRequest = () => {
 
     return axios({
@@ -21,14 +26,19 @@ const sendGetRequest = () => {
     })
 };
 
+=======
+>>>>>>> 259957a14dbd20fb4573d2a2ae697780b43b6fa0
 
 const Selection: React.FC = () => {
     const { user } = useAuth0();
+<<<<<<< HEAD
     const [repairs, setRepairs] = useState([]);
     React.useEffect(() => {
         sendGetRequest().then(data => setRepairs(data.data));
     }, []);
     console.log(repairs);
+=======
+>>>>>>> 259957a14dbd20fb4573d2a2ae697780b43b6fa0
 
     return (
         <IonApp>
