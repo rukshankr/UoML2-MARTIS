@@ -1,8 +1,16 @@
 import { IonButton, IonCard, IonCardContent, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonImg, IonInput, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
 import './Login.css';
 
 const Login: React.FC = () => {
+    const { loginWithRedirect } = useAuth0();
+
+    useEffect(() => {
+        loginWithRedirect();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <IonPage id="first">
             <IonHeader >
@@ -59,7 +67,7 @@ const Login: React.FC = () => {
                         </IonCardContent>
                         <IonCardContent>
                             <IonCol>
-                                <IonButton color="danger" shape="round" expand="block" href="/selection">
+                                <IonButton color="danger" shape="round" expand="block" /*onClick={()=> loginWithRedirect()}*/>
                                     Login
                             </IonButton>
                             </IonCol>

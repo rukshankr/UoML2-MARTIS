@@ -1,10 +1,9 @@
 import { IonAlert } from '@ionic/react';
 import { wait } from '@testing-library/react';
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import './PinBox.css';
 
-//import Haversine from 'haversine';
+
 
 const PinBox: React.FC = () => {
     const [enterPinAlert, setEnterPinAlert] = useState(true);
@@ -17,7 +16,7 @@ const PinBox: React.FC = () => {
         if (ppin?.toString() === '1998' || forgotPin) {
             setInvalidPinAlert(false);
             setEnterPinAlert(false);
-            return <Redirect to='http://localhost:8100/inspection'/>
+            return;
         }
         else {
             setEnterPinAlert(false);
@@ -79,13 +78,18 @@ const PinBox: React.FC = () => {
                 isOpen={forgotPin}
                 cssClass='my-custom-class'
                 onDidDismiss={() => setforgotPin(false)}
-                header={'Enter your email and the new PIN'}
+                header={'Enter your credentials and the new PIN'}
                 backdropDismiss={false}
                 inputs={[
                     {
                         name: 'email',
                         type: 'email',
                         placeholder: 'someone@wabtec.com'
+                    },
+                    {
+                        name: 'pwd',
+                        type: 'password',
+                        placeholder: 'enter your password'
                     },
                     {
                         name: 'newPIN',

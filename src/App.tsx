@@ -1,8 +1,9 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonContent, IonHeader, IonIcon, IonItem, IonList, IonMenu, IonRouterOutlet, IonTitle, IonToolbar, } from '@ionic/react';
-import {addSharp, checkboxSharp, createSharp, logOutSharp, searchCircleSharp, searchSharp, settingsSharp} from 'ionicons/icons';
+import {addSharp, checkboxSharp, createSharp, logOutSharp, searchCircleSharp, searchSharp, settingsSharp, trailSign} from 'ionicons/icons';
 import { IonReactRouter } from '@ionic/react-router';
+import { useAuth0 } from '@auth0/auth0-react';
 import Login from './pages/Login';
 import Selection from './pages/Selection';
 import Inspection from './pages/Inspection';
@@ -30,8 +31,18 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
+const App: React.FC = () => {
+  const {logout} = useAuth0();
+  const { user, isAuthenticated } = useAuth0();
+  const hideForMechs = () =>{
+    if(isAuthenticated && (user.name === 'Rukshan')){
+      return true;
+    }
+    else return false;
+  };
 
-const App: React.FC = () => (
+  return(
+    <>
   <React.Fragment>
   <IonApp>
     <IonMenu side="start" menuId="first" contentId="premiere">
@@ -42,13 +53,14 @@ const App: React.FC = () => (
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonItem><IonIcon slot="start" icon={addSharp}/>Create Test</IonItem>
-          <IonItem href="selection"><IonIcon slot="start" icon={checkboxSharp}/>Select Test</IonItem>
-          <IonItem href="/assign"><IonIcon slot="start" icon={createSharp}/>Assign Test</IonItem>
+        <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={trailSign}/>Create Asset</IonItem>
+          <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={addSharp}/>Create Test</IonItem>
+          <IonItem href="selection" ><IonIcon slot="start" icon={checkboxSharp}/>Select Test</IonItem>
+          <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp}/>Assign Test</IonItem>
           <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp}/>Search Inspections</IonItem>
-          <IonItem href="/repairs"><IonIcon slot="start" icon={searchCircleSharp}/>Search Repairs</IonItem>
+          <IonItem href="/repairs"><IonIcon slot="start" icon={searchCircleSharp}/>Report Repairs</IonItem>
           <IonItem><IonIcon slot="start" icon={settingsSharp}/>Settings</IonItem>
-          <IonItem href="/"><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
+          <IonItem onClick={()=> logout()}><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
         </IonList>
       </IonContent>
     </IonMenu>
@@ -65,6 +77,8 @@ const App: React.FC = () => (
       </IonReactRouter>
   </IonApp>
   </React.Fragment>
-);
+  </>
+  );
+  };
 
 export default App;
