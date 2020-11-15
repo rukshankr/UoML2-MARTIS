@@ -10,7 +10,7 @@ import axios from 'axios';
 const sendGetRequest = () => {
 
     return axios({
-        url: 'http://localhost:5000/getRepairs',
+        url: 'http://localhost:3000/repair/getRepairs',
         method: 'get'
     }).then(response => {
 
@@ -81,7 +81,7 @@ const RepairList: React.FC = () => {
                                                 {item['EngineerID']}
                                             </IonCol>
                                             <IonCol size="4">
-                                                {item['RepairDate']}
+                                                {item['CreatedDate']}
                                             </IonCol>
                                         </IonRow>
 

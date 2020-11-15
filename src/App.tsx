@@ -49,7 +49,6 @@ const App: React.FC = () => {
 
   return (
     <>
-<<<<<<< HEAD
       <React.Fragment>
         <IonApp>
           <IonMenu side="start" menuId="first" contentId="premiere">
@@ -93,39 +92,6 @@ const App: React.FC = () => {
                   <IonItem><IonIcon slot="start" icon={settingsSharp} />Settings</IonItem>
                   <IonItem onClick={() => logout()}><IonIcon slot="start" icon={logOutSharp} />Logout</IonItem>
                 </IonItemGroup>
-=======
-  <React.Fragment>
-  <IonApp>
-    <IonMenu side="start" menuId="first" contentId="premiere">
-      <IonHeader>
-        <IonToolbar color="danger">
-          <IonTitle><h2>MARTIS</h2></IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-        <IonItem href="/assets" hidden={hideForMechs()}><IonIcon slot="start" icon={trailSign}/>Create Asset</IonItem>
-          <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={addSharp}/>Create Test</IonItem>
-          <IonItem href="selection" ><IonIcon slot="start" icon={checkboxSharp}/>Select Test</IonItem>
-          <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp}/>Assign Test</IonItem>
-          <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp}/>Search Inspections</IonItem>
-          <IonItem href="/repairs"><IonIcon slot="start" icon={documentAttach}/>Report Repairs</IonItem>
-          <IonItem href="/reports" /*hidden={hideForMechs()}*/><IonIcon slot="start" icon={documentText}/>View Reports</IonItem>
-          <IonItem><IonIcon slot="start" icon={settingsSharp}/>Settings</IonItem>
-          <IonItem onClick={()=> logout()}><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
-        </IonList>
-      </IonContent>
-    </IonMenu>
-      <IonReactRouter>
-        <IonRouterOutlet id="premiere">
-          <Route path="/login" component={Login} />
-          <Route path="/selection" component={Selection} />
-          <Route path="/inspection" component={Inspection} />
-          <Route path="/assign" component={Assign} />
-          <Route path="/repairs" component={Repairs}/> 
-          <Route path="/reports" component={Reports}/>
-          <Route path="/assets" component={CreateAsset}/>
->>>>>>> 15a5fc0f2b491156cd9d50f8ba16d4d071c99af3
 
               </IonList>
             </IonContent>

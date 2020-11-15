@@ -6,11 +6,8 @@ import './Selection.css';
 import GeolocationButton from '../components/GeoLocationButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 15a5fc0f2b491156cd9d50f8ba16d4d071c99af3
 const Selection: React.FC = () => {
+
     const { user } = useAuth0();
 
     return (
