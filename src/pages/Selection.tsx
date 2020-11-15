@@ -1,42 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { IonApp, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import { globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
 
 import './Selection.css';
 import GeolocationButton from '../components/GeoLocationButton';
 import { useAuth0 } from '@auth0/auth0-react';
-import axios from 'axios';
 
 
 
-const sendGetRequest = () => {
-
-    return axios({
-      url: 'http://localhost:3000/repairs/getRepairs',
-      method: 'get'
-    }).then(response => {
-  
-      console.log(response.data);
-      return response.data;
-    })
-  };
-
-//   const updateRepairs(item) {
-//     return dispatch => {
-//         console.log(item)
-//         return axios.put(`/locks`, item).then(response => {
-//             console.log(response)
-//         })
-//     }
-// };
 
 const Selection: React.FC = () => {
     //const { isAuthenticated } = useAuth0();
     const { user } = useAuth0();
-    const [repairs, setRepairs] = useState([]);
-    React.useEffect(()=>{
-        sendGetRequest().then(data => setRepairs(data.data));
-    }, []);
 
     return (
         <IonApp>
@@ -70,9 +45,6 @@ const Selection: React.FC = () => {
                         <IonCol>
                             <GeolocationButton />
                         </IonCol>
-                    </IonRow>
-                    <IonRow>
-                        <div>{JSON.stringify(repairs, null, 2)}</div> 
                     </IonRow>
                     <IonRow>
                         <IonCol>

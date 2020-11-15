@@ -35,7 +35,7 @@ const PinBox: React.FC = () => {
                 inputs={[
                     {
                         name: 'PIN',
-                        type: 'number',
+                        type: 'password',
                         min: 0,
                         max: 10000,
                         placeholder: '0000'

@@ -9,7 +9,7 @@ import Selection from './pages/Selection';
 import Inspection from './pages/Inspection';
 import Assign from './pages/Assign';
 import Repairs from './pages/Repairs';
-
+import Reports from './pages/Reports';
 
 
 /* Core CSS required for Ionic components to work properly */
@@ -30,6 +30,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
 
 const App: React.FC = () => {
   const {logout} = useAuth0();
@@ -59,6 +60,7 @@ const App: React.FC = () => {
           <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp}/>Assign Test</IonItem>
           <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp}/>Search Inspections</IonItem>
           <IonItem href="/repairs"><IonIcon slot="start" icon={searchCircleSharp}/>Report Repairs</IonItem>
+          <IonItem href="/reports" /*hidden={hideForMechs()}*/><IonIcon slot="start" icon={addSharp}/>View Reports</IonItem>
           <IonItem><IonIcon slot="start" icon={settingsSharp}/>Settings</IonItem>
           <IonItem onClick={()=> logout()}><IonIcon slot="start" icon={logOutSharp}/>Logout</IonItem>
         </IonList>
@@ -71,6 +73,7 @@ const App: React.FC = () => {
           <Route path="/inspection" component={Inspection} />
           <Route path="/assign" component={Assign} />
           <Route path="/repairs" component={Repairs}/> 
+          <Route path="/reports" component={Reports}/>
 
           <Redirect exact from="/" to="/login" />
         </IonRouterOutlet>
