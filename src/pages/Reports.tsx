@@ -10,15 +10,18 @@ const sendGetRequest = () => {
         method: 'get'
     }).then(response => {
 
-        console.log(response.data);
+        console.log(response.data.data);
         return response.data;
     })
 };
 
 const Reports: React.FC = () => {
     const [repairs, setRepairs] = useState([]);
+    const [employeeID, setEmployeeID] = useState<string>();
+    const [date, setDate] = useState<string>();
+
     React.useEffect(() => {
-        sendGetRequest().then(data => setRepairs(data.data));
+        sendGetRequest().then(data => setRepairs(data.data));  
     }, []);
 
     return (
@@ -46,20 +49,20 @@ const Reports: React.FC = () => {
                                     <IonRow>
                                         <IonCol>
                                             <IonItem>
-                                                <IonInput type="search">Employee ID: </IonInput>
+                                                <IonInput value={employeeID} type="search" onIonChange={(e) => setEmployeeID(e.detail.value!)}>Employee ID: </IonInput>
                                             </IonItem>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
                                         <IonCol>
                                             <IonItem>
-                                                <IonInput type="date">Date: </IonInput>
+                                                <IonInput value={date} type="date" onIonChange={(e)=> setDate(e.detail.value!)}>Date: </IonInput>
                                             </IonItem>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
                                         <IonCol>
-                                            <IonButton color="danger">Search</IonButton>
+                                            <IonButton color="danger" /*onClick={() => }*/>Search</IonButton>
                                         </IonCol>
                                     </IonRow>
                                 </IonCardContent>
@@ -114,7 +117,7 @@ const Reports: React.FC = () => {
                             </IonCard>
                         </IonCol>
                     </IonRow>
-                    <IonRow>
+                    <IonRow className="ion-text-center ion-align-items-center">
                         <IonCol>
                             <IonCard>
                                 <IonCardHeader mode="ios" className="cardhead">
@@ -122,19 +125,19 @@ const Reports: React.FC = () => {
                                         <IonCol><IonCardTitle>Inspections and Repairs</IonCardTitle></IonCol>
                                     </IonRow>
                                     <IonRow>
-                                        <IonCol><IonCardSubtitle>Test Module No</IonCardSubtitle></IonCol>
-                                        <IonCol><IonCardSubtitle>Test Descripton</IonCardSubtitle></IonCol>
-                                        <IonCol><IonCardSubtitle>Condition</IonCardSubtitle></IonCol>
+                                        <IonCol size="4"><IonCardSubtitle>Test Module No</IonCardSubtitle></IonCol>
+                                        <IonCol size="4"><IonCardSubtitle>Test Descripton</IonCardSubtitle></IonCol>
+                                        <IonCol size="4"><IonCardSubtitle>Condition</IonCardSubtitle></IonCol>
                                     </IonRow>
                                 </IonCardHeader>
                                 <IonCardContent>
                                         {
                                             repairs.map(item => {
                                                 return(
-                                                <IonRow>
-                                                    <IonCol>{item['EngineerID']}</IonCol>
-                                                    <IonCol>{item['RepairDate']}</IonCol>
-                                                    <IonCol>{item['Comment']}</IonCol>
+                                                <IonRow className="ion-justify-content-center">
+                                                    <IonCol size="4">{item['EngineerID']}</IonCol>
+                                                    <IonCol size="4">{item['RepairDate']}</IonCol>
+                                                    <IonCol size="4">{item['Comment']}</IonCol>
                                                 </IonRow>
                                                 )
                                             })

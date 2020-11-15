@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import { IonApp, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
-=======
 import React from 'react';
 import { IonApp, IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonMenuButton, IonRow, IonTitle, IonToolbar } from '@ionic/react';
->>>>>>> 259957a14dbd20fb4573d2a2ae697780b43b6fa0
 import { globe, megaphone, lockClosed, toggle, train, stopwatch, gitMergeOutline, calendar, flashOff, construct, alertCircleOutline, linkSharp, codeWorking, shuffle, add } from 'ionicons/icons';
 
 import './Selection.css';
@@ -12,33 +7,8 @@ import GeolocationButton from '../components/GeoLocationButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 
-
-<<<<<<< HEAD
-const sendGetRequest = () => {
-
-    return axios({
-        url: 'http://localhost:5000/getRepairs',
-        method: 'get'
-    }).then(response => {
-
-        console.log(response.data);
-        return response.data;
-    })
-};
-
-=======
->>>>>>> 259957a14dbd20fb4573d2a2ae697780b43b6fa0
-
 const Selection: React.FC = () => {
     const { user } = useAuth0();
-<<<<<<< HEAD
-    const [repairs, setRepairs] = useState([]);
-    React.useEffect(() => {
-        sendGetRequest().then(data => setRepairs(data.data));
-    }, []);
-    console.log(repairs);
-=======
->>>>>>> 259957a14dbd20fb4573d2a2ae697780b43b6fa0
 
     return (
         <IonApp>
@@ -196,56 +166,6 @@ const Selection: React.FC = () => {
                 Track<br /> Circuits<br /> Tests
                 </div></IonButton>
                         </IonCol>
-                    </IonRow>
-                    <IonRow className="ion-text-center ion-align-items-center">
-                        <IonCol>
-                            <IonCard>
-                                <IonCardHeader className="cardhead">
-                                    <IonCardTitle>
-                                        Repairs
-                                </IonCardTitle>
-                                    <IonCardSubtitle>
-                                        <IonRow>
-                                            <IonCol size="4">
-                                                AssetID
-                                        </IonCol>
-                                            <IonCol size="4">
-                                                EngineerID
-                                        </IonCol>
-                                            <IonCol size="4">
-                                                Date Repair Assigned
-                                        </IonCol>
-                                        </IonRow>
-                                    </IonCardSubtitle>
-
-                                </IonCardHeader>
-                                <IonCardContent>
-                                    {repairs.map(item => {
-                                        return (
-                                            <IonRow className="ion-justify-content-center">
-                                                <IonCol size="4">
-                                                    {item['AssetID']}
-                                                </IonCol>
-                                                <IonCol size="4">
-                                                    {item['EngineerID']}
-                                                </IonCol>
-                                                <IonCol size="4">
-                                                    {item['RepairDate']}
-                                                </IonCol>
-                                            </IonRow>
-
-                                        )
-                                    })}
-
-                                </IonCardContent>
-
-
-                            </IonCard>
-
-                        </IonCol>
-                        <div>
-
-                        </div>
                     </IonRow>
                 </IonGrid>
             </IonContent>

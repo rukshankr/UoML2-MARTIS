@@ -30,6 +30,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import CreateAsset from './pages/CreateAsset';
 
 
 const App: React.FC = () => {
@@ -54,7 +55,7 @@ const App: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonList>
-        <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={trailSign}/>Create Asset</IonItem>
+        <IonItem href="/assets" hidden={hideForMechs()}><IonIcon slot="start" icon={trailSign}/>Create Asset</IonItem>
           <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={addSharp}/>Create Test</IonItem>
           <IonItem href="selection" ><IonIcon slot="start" icon={checkboxSharp}/>Select Test</IonItem>
           <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp}/>Assign Test</IonItem>
@@ -74,6 +75,7 @@ const App: React.FC = () => {
           <Route path="/assign" component={Assign} />
           <Route path="/repairs" component={Repairs}/> 
           <Route path="/reports" component={Reports}/>
+          <Route path="/assets" component={CreateAsset}/>
 
           <Redirect exact from="/" to="/login" />
         </IonRouterOutlet>
