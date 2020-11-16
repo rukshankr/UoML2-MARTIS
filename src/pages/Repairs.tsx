@@ -15,7 +15,7 @@ const Repairs: React.FC = () => {
     const [assetID, setassetID] = useState<string>();
     const [repairDate, setRepairDate] = useState<string>();
     const [comment, setComment] = useState<string>();
-    const [putRepair, setPutRepair] = useState<RepairPut>({put: false});
+    const [putRepair, setPutRepair] = useState<RepairPut>({ put: false });
 
     const repairJSON = {
         engineerId: engineerID,
@@ -23,19 +23,18 @@ const Repairs: React.FC = () => {
         repairDate: repairDate,
         comment: comment
     };
-    const updateRepairs: any = (repairJSON : string) => {
+    const updateRepairs: any = (repairJSON: string) => {
         console.log(repairJSON)
-        return axios.put(`http://localhost:3000/repairs/addRepair`, repairJSON).then(response => {
+        return axios.put(`http://localhost:3000/repair/addRepair`, repairJSON).then(response => {
             console.log(response.data)
-            if(response.data !== "")
-            {
-                setPutRepair({put: true, message : response.data})
+            if (response.data !== "") {
+                setPutRepair({ put: true, message: response.data })
             }
-            else setPutRepair({put: true, message : "Repair not sent"})
+            else setPutRepair({ put: true, message: "Repair not sent" })
         })
-        .catch(error => {
-            setPutRepair({put: true, message : error})
-        })
+            .catch(error => {
+                setPutRepair({ put: true, message: error })
+            })
     };
 
     return (
@@ -72,15 +71,7 @@ const Repairs: React.FC = () => {
                                             <IonItem>
                                                 <IonInput value={assetID} type="text" onIonChange={e => setassetID(e.detail.value!)}></IonInput>
                                             </IonItem>
-                                            <IonLabel position="floating">Region:</IonLabel>
-                                            <IonSelect interface="popover" placeholder="Select Region" id="region" value="abc">
-                                                <IonSelectOption value="All">ANY</IonSelectOption>
-                                                <IonSelectOption value="5">5</IonSelectOption>
-                                                <IonSelectOption value="10">10</IonSelectOption>
-                                                <IonSelectOption value="15">15</IonSelectOption>
-                                                <IonSelectOption value="20">20</IonSelectOption>
-                                                <IonSelectOption value="25">25</IonSelectOption>
-                                                <IonSelectOption value="30">30</IonSelectOption></IonSelect>
+
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
@@ -123,12 +114,13 @@ const Repairs: React.FC = () => {
                                 <IonCardContent>
                                     <IonRow>
                                         <IonCol>
-                                            <label>Repair Date:</label>
-                                            <IonInput
-                                                value={repairDate}
-                                                type="datetime-local" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31"
-                                                placeholder="Any"
-                                                onIonChange={e => setRepairDate(e.detail.value!)}></IonInput>
+
+                                            <IonItem >
+                                                <IonLabel position="floating">Repair Date:</IonLabel>
+                                                <IonInput value={repairDate} placeholder="Any"
+                                                    onIonChange={e => setRepairDate(e.detail.value!)} type="date" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31">
+                                                </IonInput>
+                                            </IonItem>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonContent, IonHeader, IonIcon, IonItem, IonItemDivider, IonItemGroup, IonLabel, IonList, IonMenu, IonRouterOutlet, IonTitle, IonToolbar, } from '@ionic/react';
-import { addSharp, checkboxSharp, createSharp, documentAttach, documentText, list, logOutSharp, searchSharp, settingsSharp, trailSign } from 'ionicons/icons';
+import { addSharp, checkboxSharp, createSharp, documentAttach, documentText, hammer, list, logOutSharp, searchSharp, settingsSharp, trailSign } from 'ionicons/icons';
 import { IonReactRouter } from '@ionic/react-router';
 import { useAuth0 } from '@auth0/auth0-react';
 import Login from './pages/Login';
@@ -13,6 +13,7 @@ import Reports from './pages/Reports';
 import Repairlist from './pages/RepairList';
 import Inspectlist from './pages/InspectionList';
 import GroundsTest from './pages/GroundsTest'
+import ManageRepairs from './pages/ManageRepairs'
 
 
 
@@ -66,13 +67,14 @@ const App: React.FC = () => {
                   <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={trailSign} />Create Asset</IonItem>
                   <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={addSharp} />Create Test</IonItem>
                   <IonItem href="selection" ><IonIcon slot="start" icon={checkboxSharp} />Select Test</IonItem>
+                  <IonItem href="/managerepairs" ><IonIcon slot="start" icon={hammer} />Manage Repairs</IonItem>
+                  <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp} />Assign Inspection/Repairs</IonItem>
                 </IonItemGroup>
                 <IonItemGroup>
                   <IonItemDivider>
                     <IonLabel>Inspections</IonLabel>
                   </IonItemDivider>
                   <IonItem href="/inspectlist"><IonIcon slot="start" icon={list} />Inspections To-Do-List</IonItem>
-                  <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp} />Assign Inspection</IonItem>
                   <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp} />Search Inspections</IonItem>
                 </IonItemGroup>
                 <IonItemGroup>
@@ -107,6 +109,7 @@ const App: React.FC = () => {
               <Route path="/repairlist" component={Repairlist} />
               <Route path="/inspectlist" component={Inspectlist} />
               <Route path="/groundstest" component={GroundsTest} />
+              <Route path="/managerepairs" component={ManageRepairs} />
 
               <Redirect exact from="/" to="/login" />
             </IonRouterOutlet>

@@ -6,7 +6,7 @@ import axios from 'axios';
 const sendGetRequest = () => {
 
     return axios({
-        url: 'http://localhost:3000/repairs/getRepairs',
+        url: 'http://localhost:3000/repair/getRepairs',
         method: 'get'
     }).then(response => {
 
@@ -21,7 +21,7 @@ const Reports: React.FC = () => {
     const [date, setDate] = useState<string>();
 
     React.useEffect(() => {
-        sendGetRequest().then(data => setRepairs(data.data));  
+        sendGetRequest().then(data => setRepairs(data.data));
     }, []);
 
     return (
@@ -49,14 +49,15 @@ const Reports: React.FC = () => {
                                     <IonRow>
                                         <IonCol>
                                             <IonItem>
-                                                <IonInput value={employeeID} type="search" onIonChange={(e) => setEmployeeID(e.detail.value!)}>Employee ID: </IonInput>
+                                                <IonLabel position="floating">Employee ID:</IonLabel>
+                                                <IonInput value={employeeID} type="search" onIonChange={(e) => setEmployeeID(e.detail.value!)} />
                                             </IonItem>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
                                         <IonCol>
                                             <IonItem>
-                                                <IonInput value={date} type="date" onIonChange={(e)=> setDate(e.detail.value!)}>Date: </IonInput>
+                                                <IonInput value={date} type="date" onIonChange={(e) => setDate(e.detail.value!)}>Date: </IonInput>
                                             </IonItem>
                                         </IonCol>
                                     </IonRow>
@@ -76,41 +77,23 @@ const Reports: React.FC = () => {
                                     <IonCardTitle>Inspection Report - Signal Tests and Inspections</IonCardTitle>
                                 </IonCardHeader>
                                 <IonCardContent>
+
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Division:</IonLabel>
-                                            <IonItem>
-                                            </IonItem>
-                                        </IonCol>
-                                        <IonCol>
-                                            <IonLabel position="fixed">Subivision:</IonLabel>
+                                            <IonLabel position="fixed">Test Date:</IonLabel><br /><br />
+
+
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Milepost:</IonLabel>
-                                            <IonItem>
-                                            </IonItem>
-                                        </IonCol>
-                                        <IonCol>
-                                            <IonLabel position="fixed">Test Date:</IonLabel>
+                                            <IonLabel position="fixed">Employee's Name:</IonLabel><br /><br />
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Location:</IonLabel>
-                                            <IonItem>
-                                            </IonItem>
-                                        </IonCol>
-                                        <IonCol>
-                                            <IonLabel position="fixed">Employee's Name:</IonLabel>
-                                        </IonCol>
-                                    </IonRow>
-                                    <IonRow>
-                                        <IonCol>
-                                            <IonLabel position="fixed">Inspection Remarks:</IonLabel>
-                                            <IonItem>
-                                            </IonItem>
+                                            <IonLabel position="fixed">Inspection Remarks:</IonLabel><br /><br />
+
                                         </IonCol>
                                     </IonRow>
                                 </IonCardContent>
@@ -131,17 +114,17 @@ const Reports: React.FC = () => {
                                     </IonRow>
                                 </IonCardHeader>
                                 <IonCardContent>
-                                        {
-                                            repairs.map(item => {
-                                                return(
+                                    {
+                                        repairs.map(item => {
+                                            return (
                                                 <IonRow className="ion-justify-content-center">
                                                     <IonCol size="4">{item['EngineerID']}</IonCol>
                                                     <IonCol size="4">{item['RepairDate']}</IonCol>
                                                     <IonCol size="4">{item['Comment']}</IonCol>
                                                 </IonRow>
-                                                )
-                                            })
-                                        }
+                                            )
+                                        })
+                                    }
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>

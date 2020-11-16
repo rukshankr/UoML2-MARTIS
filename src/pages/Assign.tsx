@@ -6,13 +6,13 @@ import './Inspection.css';
 const Assign: React.FC = () => {
     return (
         <IonPage>
-            <PinBox/>
+            <PinBox />
             <IonHeader>
                 <IonToolbar className="theme">
                     <IonButtons slot="start">
                         <IonMenuButton className="theme" autoHide={false} menu="first"></IonMenuButton>
                     </IonButtons>
-                    <IonTitle>Assign Inspections</IonTitle>
+                    <IonTitle>Assign Inspections/Repairs</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent>
@@ -21,71 +21,17 @@ const Assign: React.FC = () => {
                         <IonCol>
                             <IonCard>
                                 <IonCardHeader mode="ios" className="cardhead">
-                                    <IonCardTitle>Location Information</IonCardTitle>
+                                    <IonCardTitle>Asset Information</IonCardTitle>
                                 </IonCardHeader>
                                 <IonCardContent>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Asset IDs:</IonLabel>
+                                            <IonLabel position="fixed">Asset ID:</IonLabel>
                                             <IonItem>
                                                 <IonInput type="text"></IonInput>
                                             </IonItem>
-                                            <IonLabel position="floating">Region:</IonLabel>
-                                            <IonSelect interface="popover" placeholder="Select Region" id="region" value="abc">
-                                                <IonSelectOption value="All">Any</IonSelectOption>
-                                                <IonSelectOption value="5">5</IonSelectOption>
-                                                <IonSelectOption value="10">10</IonSelectOption>
-                                                <IonSelectOption value="15">15</IonSelectOption>
-                                                <IonSelectOption value="20">20</IonSelectOption>
-                                                <IonSelectOption value="25">25</IonSelectOption>
-                                                <IonSelectOption value="30">30</IonSelectOption></IonSelect>
                                         </IonCol>
                                     </IonRow>
-                                    <IonRow>
-                                        <IonCol>
-                                            <div>
-                                                <IonLabel position="stacked">Division:</IonLabel>
-                                                <IonSelect interface="popover" placeholder="Select Division" id="region" value="abc">
-                                                    <IonSelectOption value="All">Any</IonSelectOption>
-                                                    <IonSelectOption value="5">5</IonSelectOption>
-                                                    <IonSelectOption value="10">10</IonSelectOption>
-                                                    <IonSelectOption value="15">15</IonSelectOption>
-                                                    <IonSelectOption value="20">20</IonSelectOption>
-                                                    <IonSelectOption value="25">25</IonSelectOption>
-                                                    <IonSelectOption value="30">30</IonSelectOption></IonSelect>
-                                                <IonLabel position="stacked">Prefix:</IonLabel>
-                                                <IonSelect interface="popover" placeholder="Select Prefix" id="region" value="abc">
-                                                    <IonSelectOption value="All">Any</IonSelectOption>
-                                                    <IonSelectOption value="5">5</IonSelectOption>
-                                                    <IonSelectOption value="10">10</IonSelectOption>
-                                                    <IonSelectOption value="15">15</IonSelectOption>
-                                                    <IonSelectOption value="20">20</IonSelectOption>
-                                                    <IonSelectOption value="25">25</IonSelectOption>
-                                                    <IonSelectOption value="30">30</IonSelectOption></IonSelect>
-                                            </div>
-                                        </IonCol>
-                                        <IonCol>
-                                            <IonRow>
-                                                <div>
-                                                    <IonLabel position="stacked">Subdivision:</IonLabel>
-                                                    <IonSelect interface="popover" placeholder="Select Subdivision" id="region" value="abc">
-                                                        <IonSelectOption value="All">Any</IonSelectOption>
-                                                        <IonSelectOption value="5">5</IonSelectOption>
-                                                        <IonSelectOption value="10">10</IonSelectOption>
-                                                        <IonSelectOption value="15">15</IonSelectOption>
-                                                        <IonSelectOption value="20">20</IonSelectOption>
-                                                        <IonSelectOption value="25">25</IonSelectOption>
-                                                        <IonSelectOption value="30">30</IonSelectOption></IonSelect>
-                                                    <IonLabel position="stacked">Milepost Range:</IonLabel>
-                                                    <br></br>
-                                                    <IonCol><textarea className="Range"></textarea></IonCol>
-                                                    <IonCol> - </IonCol>
-                                                    <IonCol><textarea className="Range"></textarea></IonCol>
-                                                </div>
-                                            </IonRow>
-                                        </IonCol>
-                                    </IonRow>
-
                                 </IonCardContent>
                             </IonCard>
                         </IonCol>

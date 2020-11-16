@@ -26,17 +26,16 @@ const GroundsTest: React.FC = () => {
                                 <IonCardContent>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Asset ID:</IonLabel>
                                             <IonItem>
+                                                <IonLabel position="floating">Asset ID:</IonLabel>
                                                 <IonInput type="text"></IonInput>
                                             </IonItem>
-
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Description:</IonLabel>
                                             <IonItem>
+                                                <IonLabel position="floating">Description:</IonLabel>
                                                 <IonInput type="text"></IonInput>
                                             </IonItem>
                                         </IonCol>
@@ -54,8 +53,11 @@ const GroundsTest: React.FC = () => {
                                 <IonCardContent>
                                     <IonRow>
                                         <IonCol>
-                                            <label>Inspection Date:</label>
-                                            <IonInput type="date" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31" placeholder="Any"></IonInput>
+                                            <IonItem>
+                                                <IonLabel position="floating">Inspection Date:</IonLabel>
+                                                <IonInput type="date" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31" placeholder="Any"></IonInput>
+
+                                            </IonItem>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
@@ -98,8 +100,8 @@ const GroundsTest: React.FC = () => {
                                 <IonCardContent>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Bus name:</IonLabel>
                                             <IonItem>
+                                                <IonLabel position="floating">Bus name:</IonLabel>
                                                 <IonInput type="text"></IonInput>
                                             </IonItem>
                                         </IonCol>
@@ -149,7 +151,7 @@ const GroundsTest: React.FC = () => {
                     </IonRow>
                     <IonRow>
                         <IonCol>
-                            <IonButton href="/selection" color="danger" size="large" expand="block">Save</IonButton>
+                            <IonButton href="/inspectlist" color="danger" size="large" expand="block">Save</IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

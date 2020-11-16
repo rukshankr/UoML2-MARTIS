@@ -10,7 +10,7 @@ import axios from 'axios';
 const sendGetRequest = () => {
 
     return axios({
-        url: 'http://localhost:3000/repair/getRepairs',
+        url: 'http://localhost:3000/repair/getUnassignedRepairs',
         method: 'get'
     }).then(response => {
 
@@ -20,7 +20,7 @@ const sendGetRequest = () => {
 };
 
 
-const RepairList: React.FC = () => {
+const ManageRepairs: React.FC = () => {
     const { user } = useAuth0();
     const [repairs, setRepairs] = useState([]);
     React.useEffect(() => {
@@ -48,18 +48,6 @@ const RepairList: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonRow className="ion-text-center ion-margin">
-                    <IonCol>
-                        <IonCard >
-                            <IonCardHeader >
-                                <IonCardTitle>
-                                    Repairs Todo List
-                                    </IonCardTitle>
-
-                            </IonCardHeader>
-                        </IonCard>
-                    </IonCol>
-                </IonRow>
                 <div>
                     <IonRow id="data" className="ion-text-center">
                         {repairs.map(item => {
@@ -68,12 +56,9 @@ const RepairList: React.FC = () => {
                                     <IonCard>
                                         <IonCardHeader className="cardhead">
                                             <IonCardTitle >
-                                                EngineerID:{item['EngineerID'] ? item['EngineerID'] : "Unassigned"}
+                                                AssetID:{item['AssetID']}
                                             </IonCardTitle>
                                         </IonCardHeader>
-                                        <IonCardSubtitle>
-                                            AssetID:{item['AssetID']}
-                                        </IonCardSubtitle>
                                         <IonCardContent>
                                             <IonText>
                                                 Created Date: {item['CreatedDate']}
@@ -81,8 +66,8 @@ const RepairList: React.FC = () => {
                                             <IonText>
                                                 Comments : {item['comments'] ? item['Urgent'] : "None"}
                                             </IonText><br /><br />
-                                            <IonButton href="/repairs">
-                                                Start
+                                            <IonButton href="/assign">
+                                                Assign
                                                 </IonButton>
                                         </IonCardContent>
 
@@ -103,4 +88,4 @@ const RepairList: React.FC = () => {
 
 
 
-export default RepairList;
+export default ManageRepairs;
