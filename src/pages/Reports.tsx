@@ -3,33 +3,14 @@ import React, { useState } from 'react'
 import PinBox from '../components/PinBox';
 import axios from 'axios';
 
-<<<<<<< HEAD
-const sendGetRequest = () => {
-
-    return axios({
-        url: 'http://localhost:3000/repair/getRepairs',
-        method: 'get'
-    }).then(response => {
-        console.log(response.data.data);
-        return response.data;
-    })
-};
-=======
 interface RepairPut {
     put: boolean;
     message?: string;
 }
->>>>>>> 72cdd7bda7f8b055cc3945394a0600937bc795cc
 
 const Reports: React.FC = () => {
     const [reports, setReports] = useState([]);
     const [employeeID, setEmployeeID] = useState<string>();
-<<<<<<< HEAD
-    const [date, setDate] = useState<string>();
-    React.useEffect(() => {
-        sendGetRequest().then(data => setRepairs(data.data));
-    }, []);
-=======
     const [initialDate, setinitialDate] = useState<string>();
     const [finalDate, setfinalDate] = useState<string>();
     const [putRepair, setPutRepair] = useState<RepairPut>({ put: false });
@@ -61,7 +42,6 @@ const Reports: React.FC = () => {
             })
     };
 
->>>>>>> 72cdd7bda7f8b055cc3945394a0600937bc795cc
 
     return (
         <IonPage>
@@ -143,8 +123,8 @@ const Reports: React.FC = () => {
                                     </IonRow>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel 
-                                            position="fixed">
+                                            <IonLabel
+                                                position="fixed">
                                                 Subdivison:{subdivision ? subdivision : ""}</IonLabel><br /><br />
 
                                         </IonCol>
