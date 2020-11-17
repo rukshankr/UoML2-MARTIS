@@ -41,9 +41,37 @@ import CreateAsset from './pages/CreateAsset';
 const App: React.FC = () => {
   const { logout } = useAuth0();
   const { user, isAuthenticated } = useAuth0();
-  const hideForMechs = () => {
-    if (isAuthenticated && (user.name === 'Rukshan')) {
-      return true;
+
+  const hideForPeeps = (page : number) => {
+    if (isAuthenticated){
+      if (page === 1){
+        switch(user.name){
+          case 'Rukshan': return false;
+          case 'Yomal': return true;
+          case 'Inspector': return false;
+          case 'Mechanic': return false;
+          default: return true;
+        }
+      }
+      else if (page === 2){
+        switch(user.name){
+          case 'Rukshan': return false;
+          case 'Yomal': return true;
+          case 'Inspector': return true;
+          case 'Mechanic': return false;
+          default: return true;
+        }
+      }
+      else if (page === 3){
+        switch(user.name){
+          case 'Rukshan': return true;
+          case 'Yomal': return true;
+          case 'Inspector': return false;
+          case 'Mechanic': return true;
+          default: return true;
+        }
+      }
+      else return true;
     }
     else return false;
   };
@@ -60,30 +88,30 @@ const App: React.FC = () => {
             </IonHeader>
             <IonContent>
               <IonList>
-                <IonItemGroup>
+                <IonItemGroup hidden={!hideForPeeps(1)}>
                   <IonItemDivider>
                     <IonLabel>Manage</IonLabel>
                   </IonItemDivider>
-                  <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={trailSign} />Create Asset</IonItem>
-                  <IonItem hidden={hideForMechs()}><IonIcon slot="start" icon={addSharp} />Create Test</IonItem>
+                  <IonItem><IonIcon slot="start" icon={trailSign} />Create Asset</IonItem>
+                  <IonItem><IonIcon slot="start" icon={addSharp} />Create Test</IonItem>
                   <IonItem href="selection" ><IonIcon slot="start" icon={checkboxSharp} />Select Test</IonItem>
                   <IonItem href="/managerepairs" ><IonIcon slot="start" icon={hammer} />Manage Repairs</IonItem>
-                  <IonItem href="/assign" hidden={hideForMechs()}><IonIcon slot="start" icon={createSharp} />Assign Inspection/Repairs</IonItem>
+                  <IonItem href="/assign"><IonIcon slot="start" icon={createSharp} />Assign Inspection/Repairs</IonItem>
                 </IonItemGroup>
-                <IonItemGroup>
+                <IonItemGroup hidden={!hideForPeeps(2)}>
                   <IonItemDivider>
                     <IonLabel>Inspections</IonLabel>
                   </IonItemDivider>
                   <IonItem href="/inspectlist"><IonIcon slot="start" icon={list} />Inspections To-Do-List</IonItem>
                   <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp} />Search Inspections</IonItem>
                 </IonItemGroup>
-                <IonItemGroup>
+                <IonItemGroup hidden={!hideForPeeps(3)}>
                   <IonItemDivider>
                     <IonLabel>Repairs</IonLabel>
                   </IonItemDivider>
                   <IonItem href="/repairlist"><IonIcon slot="start" icon={list} />Repairs To-Do-List</IonItem>
                   <IonItem href="/repairs"><IonIcon slot="start" icon={documentAttach} />Report Repairs</IonItem>
-                  <IonItem href="/reports" /*hidden={hideForMechs()}*/><IonIcon slot="start" icon={documentText} />View Reports</IonItem>
+                  <IonItem href="/reports"><IonIcon slot="start" icon={documentText} />View Reports</IonItem>
 
                 </IonItemGroup>
                 <IonItemGroup>

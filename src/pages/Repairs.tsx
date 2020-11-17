@@ -20,7 +20,8 @@ const Repairs: React.FC = () => {
     const repairJSON = {
         engineerId: engineerID,
         assetId: assetID,
-        repairDate: repairDate,
+        createdDate: '2020-10-10',
+        completedDate: repairDate,
         comment: comment
     };
     const updateRepairs: any = (repairJSON: string) => {
@@ -118,7 +119,7 @@ const Repairs: React.FC = () => {
                                             <IonItem >
                                                 <IonLabel position="floating">Repair Date:</IonLabel>
                                                 <IonInput value={repairDate} placeholder="Any"
-                                                    onIonChange={e => setRepairDate(e.detail.value!)} type="date" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31">
+                                                    onIonChange={e => setRepairDate(e.detail.value!)} type="datetime-local" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31">
                                                 </IonInput>
                                             </IonItem>
                                         </IonCol>

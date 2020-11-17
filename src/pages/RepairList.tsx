@@ -4,6 +4,7 @@ import { IonApp, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, 
 import './Selection.css';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
+import PinBox from '../components/PinBox';
 
 
 
@@ -30,6 +31,7 @@ const RepairList: React.FC = () => {
 
     return (
         <IonApp>
+            <PinBox/>
             <IonHeader>
                 <IonToolbar className="theme">
                     <IonButtons slot="start">
@@ -81,8 +83,8 @@ const RepairList: React.FC = () => {
                                             <IonText>
                                                 Comments : {item['comments'] ? item['Urgent'] : "None"}
                                             </IonText><br /><br />
-                                            <IonButton href="/repairs">
-                                                Start
+                                            <IonButton href="/repairs" color="danger">
+                                                Fix
                                                 </IonButton>
                                         </IonCardContent>
 
