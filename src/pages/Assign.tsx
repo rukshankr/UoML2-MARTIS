@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonMenuButton, IonPage, IonRadio, IonRadioGroup, IonRow, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonMenuButton, IonPage, IonRadio, IonRadioGroup, IonRow, IonSegment, IonSegmentButton, IonSelect, IonSelectOption, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 import PinBox from '../components/PinBox';
 import './Inspection.css';
@@ -15,7 +15,15 @@ const Assign: React.FC = () => {
                     <IonTitle>Assign Inspections/Repairs</IonTitle>
                 </IonToolbar>
             </IonHeader>
-            <IonContent>
+            <IonContent><br />
+                {/* <IonSegment value="inspector" onIonChange={e => console.log('Segment selected', e.detail.value)}>
+                    <IonSegmentButton value="inspector">
+                        <IonLabel>Inspector</IonLabel>
+                    </IonSegmentButton>
+                    <IonSegmentButton value="engineer">
+                        <IonLabel>Engineer</IonLabel>
+                    </IonSegmentButton>
+                </IonSegment> */}
                 <IonGrid className="ion-text-center ion-margin">
                     <IonRow>
                         <IonCol>

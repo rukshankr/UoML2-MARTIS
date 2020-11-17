@@ -1,4 +1,4 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonMenuButton, IonPage, IonRadio, IonRadioGroup, IonRow, IonSelect, IonSelectOption, IonTitle, IonToast, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonMenuButton, IonPage, IonRadio, IonRadioGroup, IonRow, IonTitle, IonToast, IonToolbar } from '@ionic/react';
 import React, { useState } from 'react';
 import PinBox from '../components/PinBox';
 import './Inspection.css';
@@ -96,7 +96,7 @@ const Repairs: React.FC = () => {
                                 <IonCardContent>
                                     <IonRow>
                                         <IonCol>
-                                            <IonLabel position="fixed">Inspector ID:</IonLabel>
+                                            <IonLabel position="fixed">Engineer ID:</IonLabel>
                                             <IonItem>
                                                 <IonInput value={engineerID} type="text" onIonChange={e => setengineerID(e.detail.value!)}></IonInput>
                                             </IonItem>
