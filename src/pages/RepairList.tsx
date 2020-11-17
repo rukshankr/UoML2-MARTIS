@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { IonApp, IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonMenuButton, IonRow, IonText, IonTitle, IonToolbar } from '@ionic/react';
 
 import './Selection.css';
-import { useAuth0 } from '@auth0/auth0-react';
+//import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 import PinBox from '../components/PinBox';
-
+import { Link } from 'react-router-dom';
 
 
 const sendGetRequest = () => {
@@ -22,7 +22,7 @@ const sendGetRequest = () => {
 
 
 const RepairList: React.FC = () => {
-    const { user } = useAuth0();
+    //const { user } = useAuth0();
     const [repairs, setRepairs] = useState([]);
     React.useEffect(() => {
         sendGetRequest().then(data => setRepairs(data.data));
@@ -83,9 +83,20 @@ const RepairList: React.FC = () => {
                                             <IonText>
                                                 Comments : {item['comments'] ? item['Urgent'] : "None"}
                                             </IonText><br /><br />
-                                            <IonButton href="/repairs" color="danger">
-                                                Fix
+                                            <Link to={{
+                                                    pathname: '/repairs',
+                                                    state: {
+                                                        aid: item['AssetID'],
+                                                        eid: item['EngineerID'],
+                                                        cd: item['CreatedDate']
+                                                    }
+                                                }}>
+                                                    <IonButton
+                                                        color="danger"
+                                                    >
+                                                        Fix
                                                 </IonButton>
+                                                </Link>
                                         </IonCardContent>
 
                                     </IonCard>
