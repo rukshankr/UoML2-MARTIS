@@ -6,10 +6,10 @@ import { IonReactRouter } from '@ionic/react-router';
 import { useAuth0 } from '@auth0/auth0-react';
 import Login from './pages/Login';
 import Selection from './pages/Selection';
-import Inspection from './pages/Inspection';
+// import Inspection from './pages/Inspection';
 import Assign from './pages/Assign';
+import Report from './pages/Reports'
 import Repairs from './pages/Repairs';
-import Reports from './pages/Reports';
 import Repairlist from './pages/RepairList';
 import Inspectlist from './pages/InspectionList';
 import GroundsTest from './pages/GroundsTest'
@@ -42,10 +42,10 @@ const App: React.FC = () => {
   const { logout } = useAuth0();
   const { user, isAuthenticated } = useAuth0();
 
-  const hideForPeeps = (page : number) => {
-    if (isAuthenticated){
-      if (page === 1){
-        switch(user.name){
+  const hideForPeeps = (page: number) => {
+    if (isAuthenticated) {
+      if (page === 1) {
+        switch (user.name) {
           case 'Rukshan': return false;
           case 'Yomal': return true;
           case 'Inspector': return false;
@@ -53,8 +53,8 @@ const App: React.FC = () => {
           default: return true;
         }
       }
-      else if (page === 2){
-        switch(user.name){
+      else if (page === 2) {
+        switch (user.name) {
           case 'Rukshan': return false;
           case 'Yomal': return true;
           case 'Inspector': return true;
@@ -62,8 +62,8 @@ const App: React.FC = () => {
           default: return true;
         }
       }
-      else if (page === 3){
-        switch(user.name){
+      else if (page === 3) {
+        switch (user.name) {
           case 'Rukshan': return true;
           case 'Yomal': return true;
           case 'Inspector': return false;
@@ -103,14 +103,14 @@ const App: React.FC = () => {
                     <IonLabel>Inspections</IonLabel>
                   </IonItemDivider>
                   <IonItem href="/inspectlist"><IonIcon slot="start" icon={list} />Inspections To-Do-List</IonItem>
-                  <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp} />Search Inspections</IonItem>
+                  {/* <IonItem href="/inspection"><IonIcon slot="start" icon={searchSharp} />Search Inspections</IonItem> */}
                 </IonItemGroup>
                 <IonItemGroup hidden={!hideForPeeps(3)}>
                   <IonItemDivider>
                     <IonLabel>Repairs</IonLabel>
                   </IonItemDivider>
                   <IonItem href="/repairlist"><IonIcon slot="start" icon={list} />Repairs To-Do-List</IonItem>
-                  <IonItem href="/repairs"><IonIcon slot="start" icon={documentAttach} />Report Repairs</IonItem>
+                  {/* <IonItem href="/repairs"><IonIcon slot="start" icon={documentAttach} />Report Repairs</IonItem> */}
                   <IonItem href="/reports"><IonIcon slot="start" icon={documentText} />View Reports</IonItem>
 
                 </IonItemGroup>
@@ -130,10 +130,10 @@ const App: React.FC = () => {
             <IonRouterOutlet id="premiere">
               <Route path="/login" component={Login} />
               <Route path="/selection" component={Selection} />
-              <Route path="/inspection" component={Inspection} />
+              {/* <Route path="/inspection" component={Inspection} /> */}
               <Route path="/assign" component={Assign} />
               <Route path="/repairs" component={Repairs} />
-              <Route path="/reports" component={Reports} />
+              <Route path="/reports" component={Report} />
               <Route path="/repairlist" component={Repairlist} />
               <Route path="/inspectlist" component={Inspectlist} />
               <Route path="/groundstest" component={GroundsTest} />

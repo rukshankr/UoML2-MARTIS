@@ -64,7 +64,7 @@ const ManageRepairs: React.FC = () => {
                                                 Created Date: {item['CreatedDate']}
                                             </IonText><br /><br />
                                             <IonText>
-                                                Comments : {item['comments'] ? item['Urgent'] : "None"}
+                                                Comments : {item['comments'] ? item['comment'] : "None"}
                                             </IonText><br /><br />
                                             <IonButton href="/assign">
                                                 Assign

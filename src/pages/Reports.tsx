@@ -9,7 +9,6 @@ const sendGetRequest = () => {
         url: 'http://localhost:3000/repair/getRepairs',
         method: 'get'
     }).then(response => {
-
         console.log(response.data.data);
         return response.data;
     })
@@ -19,7 +18,6 @@ const Reports: React.FC = () => {
     const [repairs, setRepairs] = useState([]);
     const [employeeID, setEmployeeID] = useState<string>();
     const [date, setDate] = useState<string>();
-
     React.useEffect(() => {
         sendGetRequest().then(data => setRepairs(data.data));
     }, []);

@@ -4,6 +4,7 @@ import axios from 'axios';
 import './Selection.css';
 
 import { useAuth0 } from '@auth0/auth0-react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -84,9 +85,18 @@ const InspectionList: React.FunctionComponent = () => {
                                                 <IonText>
                                                     TestModID : {item['TestModID']}
                                                 </IonText><br /><br />
-                                                <IonButton href="/groundstest">
-                                                    Start
+                                                <Link to={{
+                                                    pathname: '/groundstest',
+                                                    state: {
+                                                        aid: item['AssetID'],
+                                                        eid: item['InspectorID'],
+                                                        cd: item['DateIssued']
+                                                    }
+                                                }}>
+                                                    <IonButton>
+                                                        Start
                                                 </IonButton>
+                                                </Link>
                                             </IonCardContent>
 
                                         </IonCard>
