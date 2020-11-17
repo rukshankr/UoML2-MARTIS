@@ -1,8 +1,14 @@
 import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCheckbox, IonCol, IonContent, IonGrid, IonHeader, IonInput, IonItem, IonLabel, IonMenuButton, IonPage, IonRadio, IonRadioGroup, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
+import React, { useState } from 'react';
 import './Inspection.css';
+import { useLocation } from 'react-router';
 
 const GroundsTest: React.FC = () => {
+    const location: any = useLocation();
+    const aid: string = location.state.aid;
+    const eid: string = location.state.eid;
+    const cd: string = location.state.cd;
+
     return (
         <IonPage>
             <IonHeader>
@@ -28,7 +34,8 @@ const GroundsTest: React.FC = () => {
                                         <IonCol>
                                             <IonItem>
                                                 <IonLabel position="floating">Asset ID:</IonLabel>
-                                                <IonInput type="text"></IonInput>
+                                                <IonInput value={aid}
+                                                    type="text" ></IonInput>
                                             </IonItem>
                                         </IonCol>
                                     </IonRow>
@@ -37,6 +44,29 @@ const GroundsTest: React.FC = () => {
                                             <IonItem>
                                                 <IonLabel position="floating">Description:</IonLabel>
                                                 <IonInput type="text"></IonInput>
+                                            </IonItem>
+                                        </IonCol>
+                                    </IonRow>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    </IonRow>
+                    <IonRow>
+                        <IonCol>
+                            <IonCard>
+                                <IonCardHeader mode="ios" className="cardhead">
+                                    <IonCardTitle>Personnel Information</IonCardTitle>
+                                </IonCardHeader>
+                                <IonCardContent>
+                                    <IonRow>
+                                        <IonCol>
+                                            <IonLabel position="fixed">Inspector ID:</IonLabel>
+                                            <IonItem>
+                                                <IonInput
+                                                    value={eid}
+                                                    type="text"
+                                                    placeholder={eid ? eid : "Not assigned"}
+                                                ></IonInput>
                                             </IonItem>
                                         </IonCol>
                                     </IonRow>

@@ -22,6 +22,7 @@ import axios from "axios";
 import "./Selection.css";
 
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 const InspectionList: React.FunctionComponent = () => {
   const { user } = useAuth0();
@@ -81,9 +82,7 @@ const InspectionList: React.FunctionComponent = () => {
                         </IonCardSubtitle>
                       </IonCardHeader>
                       <IonCardContent>
-                        <IonText>
-                          Date: {new Date(item["DateIssued"]).toLocaleString()}
-                        </IonText>
+                        <IonText>Date: {item["DateIssued"]}</IonText>
                         <br />
                         <br />
                         <IonText>
@@ -94,7 +93,18 @@ const InspectionList: React.FunctionComponent = () => {
                         <IonText>TestModID : {item["TestModID"]}</IonText>
                         <br />
                         <br />
-                        <IonButton href="/groundstest">Start</IonButton>
+                        <Link
+                          to={{
+                            pathname: "/groundstest",
+                            state: {
+                              aid: item["AssetID"],
+                              eid: item["InspectorID"],
+                              cd: item["DateIssued"],
+                            },
+                          }}
+                        >
+                          <IonButton>Start</IonButton>
+                        </Link>
                       </IonCardContent>
                     </IonCard>
                   </IonCol>

@@ -252,7 +252,6 @@ const Inspection: React.FC = () => {
                             </IonCard>
                         </IonCol>
                     </IonRow>
-
                     <IonRow>
                         <IonCol>
 

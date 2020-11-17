@@ -52,7 +52,7 @@ const Selection: React.FC = () => {
                     </IonRow>
                     <IonRow>
                         <IonCol >
-                            <IonButton className="alltest" href="/inspection" expand="block"  >
+                            <IonButton className="alltest" href="/assign" expand="block"  >
                                 <IonIcon icon={globe} />
                                 All tests
                             </IonButton>
@@ -62,15 +62,14 @@ const Selection: React.FC = () => {
                     <IonRow>
                         <IonCol className="ion-text-center">
 
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
 
                                 <IonIcon className="iconsize" icon={shuffle} />
                 Grade <br />Crossings <br />Tests
                 </div></IonButton>
-
                         </IonCol>
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={alertCircleOutline} />
                 Defect <br />Detector<br />  Tests
                 </div></IonButton>
@@ -78,7 +77,7 @@ const Selection: React.FC = () => {
                         </IonCol>
 
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={construct} />
                 Signal<br /> Structure<br /> Tests
                 </div></IonButton>
@@ -89,20 +88,20 @@ const Selection: React.FC = () => {
                     <IonRow>
 
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={lockClosed} />
                 Locking <br />Tests
                 </div></IonButton>
                         </IonCol>
                         <IonCol className="ion-text-center">
 
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={codeWorking} />
                 Bridge<br /> Tests
                 </div></IonButton>
                         </IonCol>
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={megaphone} />
                 Signal<br /> Tests
                 </div></IonButton>
@@ -114,19 +113,19 @@ const Selection: React.FC = () => {
                     <IonRow>
 
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={toggle} />
                 Switch<br /> Tests
                 </div></IonButton>
                         </IonCol>
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={gitMergeOutline} />
                 Relay<br /> Tests
                 </div></IonButton>
                         </IonCol>
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={stopwatch} />
                 Timing<br /> Tests
                 </div></IonButton>
@@ -137,21 +136,21 @@ const Selection: React.FC = () => {
                     <IonRow >
 
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={flashOff} />
                 Grounds<br /> Test
                 </div></IonButton>
                         </IonCol>
 
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={linkSharp} />
                 Insulation<br /> Tests
                 </div></IonButton>
                         </IonCol>
 
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={calendar} />
                 Weekly<br /> Crossing<br /> Tests
                 </div></IonButton>
@@ -161,7 +160,7 @@ const Selection: React.FC = () => {
                     <IonRow>
 
                         <IonCol className="ion-text-center">
-                            <IonButton href="/inspection" className="squarebutton" fill="clear"><div className="divclass">
+                            <IonButton href="/assign" className="squarebutton" fill="clear"><div className="divclass">
                                 <IonIcon className="iconsize" icon={train} />
                 Track<br /> Circuits<br /> Tests
                 </div></IonButton>
