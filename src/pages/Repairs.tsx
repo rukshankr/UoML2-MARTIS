@@ -4,6 +4,7 @@ import PinBox from '../components/PinBox';
 import './Inspection.css';
 import axios from 'axios';
 import { useLocation } from 'react-router';
+const date = require('date-and-time');
 
 interface RepairPut {
     put: boolean;
@@ -13,8 +14,10 @@ interface RepairPut {
 
 const Repairs: React.FC = () => {
     const location: any = useLocation();
+    console.log(location.state);
+
     const [engineerID, setengineerID] = useState<string>();
-    const [assetID, setassetID] = useState<string>();
+    const [assetID, setassetID] = useState<string>('A101');
     const [repairDate, setRepairDate] = useState<string>();
     const [comment, setComment] = useState<string>();
     const [putRepair, setPutRepair] = useState<RepairPut>({ put: false });
@@ -23,9 +26,11 @@ const Repairs: React.FC = () => {
     const eid: string = location.state.eid;
     const cd: string = location.state.cd;
 
+    const createdDate = new Date(cd);
+
     const repairJSON = {
-        assetId: aid,
-        createdDate: cd,
+        assetId: aid ? aid : assetID,
+        createdDate: date.format(createdDate, 'YYYY/MM/DD HH:mm:ss'),
         completedDate: repairDate,
         comment: comment
     };
@@ -37,6 +42,27 @@ const Repairs: React.FC = () => {
                 setPutRepair({ put: true, message: response.data.message })
             }
             else setPutRepair({ put: true, message: "Repair report not sent" })
+        })
+            .catch(error => {
+                setPutRepair({ put: true, message: error })
+            })
+    };
+
+    const notifyJSON = {
+        assetId: aid,
+        createdDate: date.format(createdDate, 'YYYY/MM/DD HH:mm:ss'),
+        comment: comment
+    };
+
+    const notifyManager: any = (notifyJSON: string) => {
+        console.log(notifyJSON);
+
+        return axios.patch(`http://localhost:3000/repair/removeAssignment`, notifyJSON).then(response => {
+            console.log(response.data)
+            if (response.data !== "") {
+                setPutRepair({ put: true, message: response.data })
+            }
+            else setPutRepair({ put: true, message: "Manager not Notified." })
         })
             .catch(error => {
                 setPutRepair({ put: true, message: error })
@@ -78,7 +104,7 @@ const Repairs: React.FC = () => {
                                                 <IonInput
                                                     value={aid}
                                                     type="text"
-                                                    onIonChange={e => setassetID(e.detail.value!)}></IonInput>
+                                                    /*onIonChange={e => setassetID(e.detail.value!)}*/></IonInput>
                                             </IonItem>
 
                                         </IonCol>
@@ -87,10 +113,10 @@ const Repairs: React.FC = () => {
                                         <IonCol>
                                             <IonLabel position="fixed">Description:</IonLabel>
                                             <IonItem>
-                                                <IonInput value={comment} 
-                                                type="text" 
-                                                onIonChange={e => setComment(e.detail.value!)} 
-                                                placeholder={cd}></IonInput>
+                                                <IonInput value={comment}
+                                                    type="text"
+                                                    onIonChange={e => setComment(e.detail.value!)}
+                                                    placeholder={cd}></IonInput>
                                             </IonItem>
                                         </IonCol>
                                     </IonRow>
@@ -109,11 +135,11 @@ const Repairs: React.FC = () => {
                                         <IonCol>
                                             <IonLabel position="fixed">Engineer ID:</IonLabel>
                                             <IonItem>
-                                                <IonInput 
-                                                value={engineerID} 
-                                                type="text" 
-                                                onIonChange={e => setengineerID(e.detail.value!)}
-                                                placeholder={eid ? eid : "Not assigned"}
+                                                <IonInput
+                                                    value={engineerID}
+                                                    type="text"
+                                                    onIonChange={e => setengineerID(e.detail.value!)}
+                                                    placeholder={eid ? eid : "Not assigned"}
                                                 ></IonInput>
                                             </IonItem>
                                         </IonCol>
@@ -135,7 +161,11 @@ const Repairs: React.FC = () => {
                                             <IonItem >
                                                 <IonLabel position="floating">Repair Date:</IonLabel>
                                                 <IonInput value={repairDate} placeholder="Any"
-                                                    onIonChange={e => setRepairDate(e.detail.value!)} type="datetime-local" id="due_date" name="due_date" min="2019-01-01" max="2029-12-31">
+                                                    onIonChange={e => setRepairDate(e.detail.value!)}
+                                                    type="datetime-local"
+                                                    id="due_date"
+                                                    name="due_date"
+                                                    min="2019-01-01" max="2029-12-31">
                                                 </IonInput>
                                             </IonItem>
                                         </IonCol>
@@ -163,10 +193,9 @@ const Repairs: React.FC = () => {
                                 <IonCardContent>
                                     <IonRow>
                                         <IonCol>
-                                            <IonItem lines="none">
-                                                <IonCheckbox slot="start" />
-                                                <IonLabel>Needs further maintenance</IonLabel>
-                                            </IonItem>
+                                            <IonButton color="danger"
+                                                onClick={() => notifyManager(notifyJSON)}>
+                                                Needs more repairs</IonButton>
                                         </IonCol>
                                     </IonRow>
                                     <IonRow>
