@@ -25,15 +25,13 @@
     "axios": "^0.21.0",
     "cordova-plugin-geofence": "^0.7.0",
     "cordova-plugin-geolocation": "^4.0.2",
+    "date-and-time": "^0.14.1",
     "haversine": "^1.1.1",
     "ionicons": "^5.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-redux": "^7.2.2",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
     "typescript": "3.8.3"
   },
   "scripts": {
