@@ -82,7 +82,9 @@ const InspectionList: React.FunctionComponent = () => {
                         </IonCardSubtitle>
                       </IonCardHeader>
                       <IonCardContent>
-                        <IonText>Date: {item["DateIssued"]}</IonText>
+                        <IonText>
+                          Date: {new Date(item["DateIssued"]).toLocaleString()}
+                        </IonText>
                         <br />
                         <br />
                         <IonText>

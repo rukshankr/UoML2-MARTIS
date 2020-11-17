@@ -74,11 +74,14 @@ const ManageRepairs: React.FC = () => {
                       <IonCardTitle>AssetID:{item["AssetID"]}</IonCardTitle>
                     </IonCardHeader>
                     <IonCardContent>
-                      <IonText>Created Date: {item["CreatedDate"]}</IonText>
+                      <IonText>
+                        Created Date:{" "}
+                        {new Date(item["CreatedDate"]).toLocaleString()}
+                      </IonText>
                       <br />
                       <br />
                       <IonText>
-                        Comments : {item["comments"] ? item["comment"] : "None"}
+                        Comments :{item["comments"] ? item["comments"] : "None"}
                       </IonText>
                       <br />
                       <br />
